@@ -3,9 +3,20 @@
 // Preprocessor directives, by Eduardo Corpeño 
 
 #include <iostream>
+#include <string>
+#include <cstdint>
+// When preprocessor finds CAPACITY it will replace it with 5000
+#define CAPACITY 5000
 
 int main(){
-    
+    int32_t large = CAPACITY;
+    uint8_t small = 37;
+#ifdef DEBUG
+    std::cout << "About to perform addition..." << std::endl;
+#endif
+    large += small; // shorthand for "large = large + small;""
+    std::cout << "The large integer is " << large << std::endl;
+
     std::cout << std::endl << std::endl;
     return (0);
 }
